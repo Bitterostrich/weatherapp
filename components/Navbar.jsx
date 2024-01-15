@@ -17,7 +17,7 @@ const Navbar = () => {
                 App-Name
             </div>
             <div>
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
             </div>
            
         </div>
