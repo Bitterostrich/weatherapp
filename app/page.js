@@ -16,12 +16,12 @@ export default function Home() {
 
       <container className='flex'>
         
-        <div className="w-1/3 flex flex-col items-center justify-between" >
+        <div className=" flex flex-col items-center justify-between border" >
           <DateAndArea />
           <Widget />
         </div>
 
-        <div className=" flex-col z-10 max-w-5xl w-2/3 items-center justify-between  font-mono text-sm lg:flex">
+        <div className=" flex-col z-10 max-w-5xl w-2/3 items-center justify-between border font-mono text-sm lg:flex">
           <Calendar />
           <TodoList />
         </div>
