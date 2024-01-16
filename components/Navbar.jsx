@@ -37,3 +37,4 @@ const Navbar = ({ weatherCondition }) => {
 };
 
 export default Navbar;
+
