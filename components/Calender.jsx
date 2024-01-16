@@ -42,7 +42,6 @@ const Calendar = () => {
     const goToNextMonth = () => {
         setCurrentMonth(prevMonth => {
             if (prevMonth === 11) {
-                setCurrentYear(prevYear => prevYear + 1)
                 return 0
             } else {
                 return prevMonth + 1
@@ -52,7 +51,6 @@ const Calendar = () => {
     const goToPreviousMonth = () => {
         setCurrentMonth(prevMonth => {
             if (prevMonth === 0) {
-                setCurrentYear(prevYear => prevYear - 1);
                 return 11
             } else {
                 return prevMonth - 1;
@@ -64,7 +62,7 @@ const Calendar = () => {
         <div>
             <div className='flex flex-row w-full justify-between '>
                 <button onClick={goToPreviousMonth}>Previous</button>
-                <div>{month[currentMonth]}</div>
+                <div>{month[currentMonth]} {currentYear}</div>
                 <button onClick={goToNextMonth}>Next</button>
             </div>
             <CalenderRow  DaysOfWeek={DaysOfWeek} margin="mt-[2.5%]" BackroundColour={"bg-red-600"} TextColour={"text-white"}/>
