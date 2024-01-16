@@ -5,8 +5,11 @@ import React from "react"
 
 const Day = ({day, BackroundColour, TextColour}) => {
 
-    console.log(day)
-     
+    
+    if (day == undefined)
+    {
+        day = null
+    }
     return ( 
      <div className={`w-full h-full ${BackroundColour} text-2xl text-center ${TextColour} `}>
         <div>

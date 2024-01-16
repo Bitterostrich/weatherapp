@@ -3,6 +3,7 @@ import Day from "./Day"
 
 const Calendar = ({DaysOfWeek, margin ,BackroundColour, TextColour}) => {
 
+     
      return( 
           <div className={`flex justify-evenly text-justify bg-black mx-[2.5%] h-[60px] ${margin} p-[2px] gap-[2px]`}> 
                <Day day={DaysOfWeek[0]} BackroundColour={BackroundColour} TextColour={TextColour}/>  

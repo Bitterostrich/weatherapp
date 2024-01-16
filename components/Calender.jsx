@@ -1,12 +1,13 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import CalenderRow from "./CalenderRow.jsx"
 
 const Calendar = () => {
 
     const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth();
+    const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
+    const [currentMonth, setCurrentMonth] = useState(currentDate.getMonth());
+
     const getDaysInMonth = (year, month) => {
         return new Date(year, month + 1, 0).getDate();
     };
@@ -30,15 +31,42 @@ const Calendar = () => {
                 weeks.push(weekDays);
                 weekDays = []; // Reset for the next week
             }
-        }
+        }console.log(weeks)
+        weeks.push([null, null, null, null, null, null, null])
         return weeks[index];
     };
 
 
     const DaysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    
-    return ( 
+    const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    const goToNextMonth = () => {
+        setCurrentMonth(prevMonth => {
+            if (prevMonth === 11) {
+                setCurrentYear(prevYear => prevYear + 1)
+                return 0
+            } else {
+                return prevMonth + 1
+            }
+        })
+    }
+    const goToPreviousMonth = () => {
+        setCurrentMonth(prevMonth => {
+            if (prevMonth === 0) {
+                setCurrentYear(prevYear => prevYear - 1);
+                return 11
+            } else {
+                return prevMonth - 1;
+            }
+        })
+    }
+    return (
+        
         <div>
+            <div className='flex flex-row w-full justify-between '>
+                <button onClick={goToPreviousMonth}>Previous</button>
+                <div>{month[currentMonth]}</div>
+                <button onClick={goToNextMonth}>Next</button>
+            </div>
             <CalenderRow  DaysOfWeek={DaysOfWeek} margin="mt-[2.5%]" BackroundColour={"bg-red-600"} TextColour={"text-white"}/>
 
             <CalenderRow  DaysOfWeek={generateDays(0)} margin="" BackroundColour={"bg-white"} TextColour={"text-black"}/>
