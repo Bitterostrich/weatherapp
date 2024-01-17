@@ -23,20 +23,3 @@ responseStatusCheck(responseObject) {
     return this.getRequest(`https://quotable.io/quotes?authorId=${authorId}`)
    }
 }
-
-
-
-
-const getLink = () => {
-     useEffect(() => {
-          let userList = JSON.parse(localStorage.getItem('user'));
-          let currentUser = JSON.parse(localStorage.getItem("currentUser"))
-     
-          for(let i in userList){
-               if(userList[i].name == currentUser.name && userList[i].password == currentUser.password){
-                    imgLink = userList[i].PFP
-                    return(imgLink)
-               }
-          }
-     }, [])
-}

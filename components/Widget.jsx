@@ -1,3 +1,6 @@
+'use client'
+import WeatherGrid from "./WeatherGrid";
+
 const Widget = () => {
   const weatherData = [
     { timeOfDay: 'time', minTemp: 'Min', maxTemp: 'Max', windSpeed: 'Wind(kph)' },
@@ -18,15 +21,15 @@ const Widget = () => {
   const { date, location, weatherIcon } = topWidgetData[0];
 
   return (
-    <div className="border text-sm">
-      <div>
+    <div className=" flex flex-col items-baseline text-sm w-full h-full gap-4">
+      <div className="h-[10%]">
         {date},    
         {location} 
       </div>
-      <div>
+      <div className="h-[40%]">
         <img src={weatherIcon} alt="Weather icon" /> 
       </div>
-      <div className="flex text-xs">
+      <div className="flex flex-col gap-2 h-1/2">
         {weatherData.map(data => (
           <WeatherGrid 
             timeOfDay={data.timeOfDay} 
@@ -39,19 +42,6 @@ const Widget = () => {
     </div>
   );
 }
-
-
-const WeatherGrid = ({ timeOfDay, minTemp, maxTemp, windSpeed}) =>{
-  return (
-    <div className="flex flex-col text-center text-xs">
-      <h2 className="font-bold text-cent">{timeOfDay}</h2>
-      <p>{minTemp}</p>
-      <p>{maxTemp}</p>
-      <p>{windSpeed}</p>
-    </div>
-  );
-}
-
 
 
 export default Widget;
