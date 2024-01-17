@@ -58,20 +58,6 @@ const Calendar = () => {
         })
     }
 
-    const getKey = async () =>
-    {
-        console.log("CLICKED")
-        try 
-        {
-            const response = await fetch("/api/Weather")
-            const data = response
-            console.log(data)
-        } 
-        catch (error) 
-        {
-            console.error(error)
-        }
-    }
 
 
     return (
@@ -90,7 +76,6 @@ const Calendar = () => {
             <CalenderRow  DaysOfWeek={generateDays(3)} margin="" BackroundColour={"bg-white"} TextColour={"text-black"}/>
             <CalenderRow  DaysOfWeek={generateDays(4)} margin="mb-[2.5%]" BackroundColour={"bg-white"} TextColour={"text-black"}/>
 
-            <button onClick={getKey}>CLICK HERE</button>
         </div>
     )
 }
