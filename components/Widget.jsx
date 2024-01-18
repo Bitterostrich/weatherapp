@@ -25,6 +25,7 @@ const Widget = () => {
 
   const changeWeatherData = async () =>
   { 
+    
     let response = await getKey()
     console.log("Filtered")
     console.log(response.temp_min)
