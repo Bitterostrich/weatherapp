@@ -31,7 +31,7 @@ const Calendar = () => {
                 weeks.push(weekDays);
                 weekDays = []; // Reset for the next week
             }
-        }console.log(weeks)
+        }
         weeks.push([null, null, null, null, null, null, null])
         return weeks[index];
     };
@@ -57,6 +57,9 @@ const Calendar = () => {
             }
         })
     }
+
+
+
     return (
         
         <div>
@@ -72,6 +75,7 @@ const Calendar = () => {
             <CalenderRow  DaysOfWeek={generateDays(2)} margin="" BackroundColour={"bg-white"} TextColour={"text-black"}/>
             <CalenderRow  DaysOfWeek={generateDays(3)} margin="" BackroundColour={"bg-white"} TextColour={"text-black"}/>
             <CalenderRow  DaysOfWeek={generateDays(4)} margin="mb-[2.5%]" BackroundColour={"bg-white"} TextColour={"text-black"}/>
+
         </div>
     )
 }
