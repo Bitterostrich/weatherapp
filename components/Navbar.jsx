@@ -23,18 +23,11 @@ const Navbar = ({ weatherCondition }) => {
           className="mr-2 w-12 h-12 md:w-20 md:h-20"
         />
       </div>
-      <div className="text-white font-bold text-xl md:text-3xl">
+      <div className="text-white font-bold text-xl md:text-3xl mx-auto">
         cloudy with a chance of meatballs
-      </div>
-      <div>
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
