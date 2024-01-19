@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const DateAndArea = () => {
-  return (
-    <div className='border-2 border-red-700'>DateAndArea</div>
-  )
-}
+  return <div className="border-2 border-red-700">DateAndArea</div>;
+};
 
-export default DateAndArea
+export default DateAndArea;

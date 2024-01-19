@@ -6,24 +6,24 @@ const WeatherGrid = ({
   windSpeed,
   img,
 }) => {
-  let imglink = "";
-
-  if (img != "") {
-    imglink = `http://openweathermap.org/img/wn/${img}@2x.png`;
-  } else {
-    imglink = "";
-  }
+  const imglink =
+    img !== "" ? `http://openweathermap.org/img/wn/${img}@2x.png` : "";
 
   return (
-    <div>
-      <p className="font-bold col-span-1">{summary}</p>
-      <div className=" h-full w-full grid grid-cols-4 gap-4 grid-rows-1 text-left text-xs justify-items-start ">
-        <h2 className="font-bold col-span-1">{timeOfDay}</h2>
-        <p className="col-span-1">{minTemp}</p>
-        <p className="col-span-1">{maxTemp}</p>
-        <p className="col-span-1">{windSpeed}</p>
-        <img src={imglink} />
+    <div className="border border-gray-300 p-4 rounded-md shadow-md">
+      <p className="font-bold text-lg mb-2">{summary}</p>
+
+      <div className="grid grid-cols-4 gap-4 text-sm text-left">
+        <div className="col-span-1 font-semibold">{timeOfDay}</div>
+        <div className="col-span-1">{minTemp}</div>
+        <div className="col-span-1">{maxTemp}</div>
+        <div className="col-span-1">{windSpeed}</div>
       </div>
+      {imglink && (
+        <div className="mt-2 flex justify-center">
+          <img src={imglink} alt="Weather Icon" className="w-18 h-18" />
+        </div>
+      )}
     </div>
   );
 };

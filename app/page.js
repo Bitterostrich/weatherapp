@@ -8,18 +8,22 @@ import DateAndArea from "@/components/DateAndArea";
 import TodoList from "@/components/TodoList";
 export default function Home() {
   return (
-    <main className="flex flex-col  border-2 border-black justify-between p-24">
+    <main className="flex flex-col h-screen bg-gray-100 ">
+      {/* Navbar */}
       <Navbar />
 
-      <container className="flex">
-        <div className="w-1/3 flex flex-col border-2 border-black justify-between w-full">
+      <div className="flex flex-col lg:flex-row w-full h-full">
+        {/* Left Section */}
+        <div className="lg:w-1/3 flex flex-col border-2 border-black bg-white p-4">
           <DateAndArea />
           <Widget />
         </div>
-        <div className=" flex-col z-10 max-w-5xl w-2/3 border-2 border-black font-mono text-sm lg:flex">
+
+        {/* Right Section */}
+        <div className="lg:flex-grow w-full lg:w-2/3 border-2 border-black bg-white p-4 h-full">
           <Calendar />
         </div>
-      </container>
+      </div>
     </main>
   );
 }
